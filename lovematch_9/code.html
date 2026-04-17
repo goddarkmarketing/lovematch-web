@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LoveMatch - ค้นหารักแท้ที่พรีเมียมและปลอดภัย</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#560020",
+                      "background": "#fff8f8",
+                      "on-secondary-fixed-variant": "#9128ad",
+                      "error-container": "#f56965",
+                      "on-tertiary-fixed": "#453900",
+                      "surface": "#fff8f8",
+                      "on-primary-fixed-variant": "#8d003a",
+                      "on-primary-container": "#7d0032",
+                      "inverse-on-surface": "#ac989f",
+                      "on-surface": "#432c36",
+                      "tertiary-fixed-dim": "#efc900",
+                      "on-error-container": "#65000b",
+                      "surface-dim": "#f7d0df",
+                      "surface-variant": "#fed9e7",
+                      "on-secondary-container": "#8619a2",
+                      "tertiary-fixed": "#ffd709",
+                      "on-background": "#432c36",
+                      "outline-variant": "#cba9b6",
+                      "on-tertiary-fixed-variant": "#665500",
+                      "on-error": "#fff7f6",
+                      "surface-container-highest": "#fed9e7",
+                      "on-secondary-fixed": "#6d0087",
+                      "primary-fixed": "#ffa9b9",
+                      "surface-container-high": "#ffe0eb",
+                      "on-secondary": "#fff7fb",
+                      "on-tertiary": "#fff8ec",
+                      "primary": "#bd0050",
+                      "tertiary-container": "#ffd709",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-container": "#5b4b00",
+                      "primary-container": "#ffa9b9",
+                      "surface-container-low": "#fff0f4",
+                      "primary-fixed-dim": "#ff93aa",
+                      "on-surface-variant": "#735763",
+                      "outline": "#90737f",
+                      "secondary-container": "#fdd6ff",
+                      "surface-container": "#ffe8f0",
+                      "inverse-surface": "#160b10",
+                      "secondary-fixed-dim": "#f8c3ff",
+                      "secondary-dim": "#871ba4",
+                      "surface-tint": "#bd0050",
+                      "inverse-primary": "#ff4d81",
+                      "error-dim": "#70030f",
+                      "surface-bright": "#fff8f8",
+                      "on-primary": "#fff7f7",
+                      "error": "#ac3434",
+                      "tertiary-dim": "#635200",
+                      "secondary-fixed": "#fdd6ff",
+                      "tertiary": "#705e00",
+                      "primary-dim": "#a70046",
+                      "secondary": "#952cb1"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Plus Jakarta Sans"],
+                      "body": ["Be Vietnam Pro"],
+                      "label": ["Be Vietnam Pro"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 20px 50px rgba(189, 0, 80, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl flex justify-between items-center px-8 py-4 max-w-full mx-auto shadow-sm shadow-pink-100/20">
+<div class="text-2xl font-black bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent font-headline">LoveMatch</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-pink-600 font-bold border-b-2 border-pink-500 pb-1 font-label tracking-wide" href="#">หน้าแรก</a>
+<a class="text-slate-600 hover:text-pink-500 transition-colors font-label tracking-wide" href="#">Gifts</a>
+<a class="text-slate-600 hover:text-pink-500 transition-colors font-label tracking-wide" href="#">Chat</a>
+<a class="text-slate-600 hover:text-pink-500 transition-colors font-label tracking-wide" href="#">Premium</a>
+<a class="text-slate-600 hover:text-pink-500 transition-colors font-label tracking-wide" href="#">Admin</a>
+<a class="text-slate-600 hover:text-pink-500 transition-colors font-label tracking-wide" href="#">Language</a>
+</div>
+<div class="flex items-center space-y-0 space-x-4">
+<button class="text-pink-600 hover:bg-rose-50/50 transition-all duration-300 px-4 py-2 rounded-full font-label tracking-wide">เข้าสู่ระบบ</button>
+<button class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-pink-200 active:scale-90 transition-transform font-label tracking-wide">สมัครสมาชิก</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[921px] flex items-center pt-20 overflow-hidden bg-surface">
+<div class="container mx-auto px-8 grid md:grid-cols-2 gap-12 items-center relative z-10">
+<div class="space-y-8">
+<h1 class="text-6xl md:text-7xl font-headline font-extrabold leading-tight text-on-surface">
+                    ค้นหารักแท้ที่ <br/>
+<span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">พรีเมียมและปลอดภัย</span>
+</h1>
+<p class="text-body-lg text-on-surface-variant max-w-lg leading-relaxed">
+                    ยกระดับการหาคู่ของคุณสู่ระดับสากล ด้วยระบบการคัดกรองสมาชิกที่มีคุณภาพ และเทคโนโลยี AI ที่ช่วยค้นหาคนที่ตรงใจที่สุดเพื่อความสัมพันธ์ที่ยั่งยืน
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-gradient-to-r from-primary to-secondary text-on-primary px-10 py-5 rounded-full font-bold text-lg shadow-xl shadow-primary/20 hover:scale-105 transition-transform">
+                        เริ่มหาคู่เลย
+                    </button>
+<button class="bg-surface-container-high text-primary px-10 py-5 rounded-full font-bold text-lg hover:bg-surface-container-highest transition-colors">
+                        เรียนรู้เพิ่มเติม
+                    </button>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-secondary-container/30 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-10 -left-10 w-72 h-72 bg-primary-container/20 rounded-full blur-3xl"></div>
+<div class="relative rounded-xl overflow-hidden aspect-[4/5] editorial-shadow transform md:rotate-2 group-hover:rotate-0 transition-transform duration-700">
+<img alt="Premium Dating Experience" class="w-full h-full object-cover" data-alt="attractive young couple smiling together in a modern bright setting with soft pink and warm ambient lighting editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAynwgynqpRcPWR8MitAQbdZIUXbh5EICmdg6G9J6WME3cTc9WkWwyXJueJKyouW01dSOBmTXWf5lKEhANG3sOCvKyq50s6BiaN8Srp7Uak7HJIVp7pRkGbxLeVOu3eqwmrj85Hk2eg8cNdmRm40rd1i8rfuahptHVgM9vnV48EzcEvUIAXUjDptvKLZmSOkam1n0D1X-2vCOqr2OULAR8yzcJfpMUiXMUu8J0-__LAx5LNbmt-IqDDRwKqUE-XzxAAANhpep778bo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 backdrop-blur-md bg-white/20 p-4 rounded-lg border border-white/20">
+<p class="text-white font-medium italic">"พบคนที่ใช่ ในเวลาที่เหมาะสมที่สุดกับ LoveMatch"</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Features Section: Bento Grid -->
+<section class="py-24 bg-surface-container-low">
+<div class="container mx-auto px-8">
+<div class="text-center mb-16 space-y-4">
+<span class="text-primary font-bold tracking-[0.2em] label-md uppercase">ทำไมต้อง LoveMatch?</span>
+<h2 class="text-4xl md:text-5xl font-headline font-bold text-on-background">ความแตกต่างที่เหนือระดับ</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- AI Feature -->
+<div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-lg editorial-shadow flex flex-col justify-between group hover:bg-primary transition-colors duration-500">
+<div class="space-y-4">
+<div class="w-14 h-14 bg-primary-container rounded-2xl flex items-center justify-center text-primary group-hover:bg-white/20 group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">psychology</span>
+</div>
+<h3 class="text-2xl font-bold font-headline group-hover:text-white">AI จับคู่อัจฉริยะ</h3>
+<p class="text-on-surface-variant group-hover:text-white/80">ระบบอัลกอริทึมวิเคราะห์ไลฟ์สไตล์และทัศนคติ เพื่อจับคู่คนที่ตรงกับความต้องการของคุณมากที่สุด</p>
+</div>
+</div>
+<!-- Chat Feature -->
+<div class="bg-surface-container-lowest p-8 rounded-lg editorial-shadow space-y-4 hover:-translate-y-2 transition-transform">
+<div class="w-12 h-12 bg-secondary-container rounded-xl flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">forum</span>
+</div>
+<h3 class="text-xl font-bold font-headline">แชทเรียลไทม์</h3>
+<p class="text-sm text-on-surface-variant">สื่อสารได้อย่างลื่นไหลไม่มีสะดุด พร้อมระบบส่งข้อความเสียงและวิดีโอคอล</p>
+</div>
+<!-- Gift Feature -->
+<div class="bg-surface-container-lowest p-8 rounded-lg editorial-shadow space-y-4 hover:-translate-y-2 transition-transform">
+<div class="w-12 h-12 bg-tertiary-container rounded-xl flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined">card_giftcard</span>
+</div>
+<h3 class="text-xl font-bold font-headline">ของขวัญดิจิทัล</h3>
+<p class="text-sm text-on-surface-variant">สร้างความประทับใจแรกด้วยการส่งของขวัญสุดพิเศษแทนความรู้สึก</p>
+</div>
+<!-- Security Feature -->
+<div class="md:col-span-4 bg-gradient-to-r from-slate-900 to-primary p-8 rounded-lg text-white flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="space-y-2 max-w-xl">
+<h3 class="text-2xl font-bold font-headline">ความปลอดภัยระดับสูงสุด</h3>
+<p class="text-white/80">สมาชิกทุกคนต้องผ่านการยืนยันตัวตน (Verified Profile) เพื่อให้แน่ใจว่าคุณกำลังคุยกับคนที่มีตัวตนจริง ในสภาพแวดล้อมที่ปลอดภัย</p>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl mb-2" data-weight="fill">verified_user</span>
+<span class="text-xs font-label">Verified Only</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl mb-2" data-weight="fill">lock_person</span>
+<span class="text-xs font-label">End-to-End</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Highlight Profiles Section -->
+<section class="py-24 bg-surface overflow-hidden">
+<div class="container mx-auto px-8">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="text-primary font-bold tracking-[0.2em] label-md uppercase">ผู้คนน่าสนใจ</span>
+<h2 class="text-4xl font-headline font-bold text-on-background mt-2">สมาชิกพรีเมียมในสัปดาห์นี้</h2>
+</div>
+<button class="text-primary font-bold flex items-center gap-2 hover:underline transition-all">
+                    ดูทั้งหมด <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Profile Card 1 -->
+<div class="group relative rounded-lg overflow-hidden bg-white editorial-shadow transition-all hover:scale-[1.02]">
+<div class="h-80 overflow-hidden relative">
+<img alt="Profile 1" class="w-full h-full object-cover" data-alt="portrait of a beautiful young Thai woman in a garden setting soft evening sun golden hour photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAZ9GykUW9qX-Xzx37FBfp2XGipRkq5WNo_7u5DKE3xA8iqJ4AMmIIn9uAvtoaRKirDCrL1Qx2rCMwC8MD1XhQ-DqFRRDiT-6oTqprz37DOb4CHxq-u-7zNnyr3zI8xQO6Se6Wbo-tAHgnP4A3Y9acfzYV7RgVexq2wTPLDPrJCUDkGUJR8wYHJPGgAxkL09e-7xC0siVyC5XJPKyZ1kgA-hqn9a4VeQ5sVBAgmEc93wUuTz7z1CEtSl6vl0OxpBpBcvaPhv6ccPs"/>
+<div class="absolute top-4 right-4 backdrop-blur-md bg-white/30 px-3 py-1 rounded-full text-white text-xs font-label flex items-center gap-1 border border-white/20">
+<span class="w-2 h-2 bg-secondary rounded-full animate-pulse shadow-[0_0_8px_#952cb1]"></span> Online
+                        </div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-bold font-headline">แพรวา, 25</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> กรุงเทพฯ
+                                </p>
+</div>
+<div class="bg-tertiary-container text-on-tertiary-container px-2 py-0.5 rounded text-[10px] font-black tracking-tighter uppercase">Verified</div>
+</div>
+<div class="mt-6 flex gap-3">
+<button class="flex-1 bg-surface-container-high text-primary py-2.5 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-lg">favorite</span> ถูกใจ
+                            </button>
+<button class="w-12 h-12 border border-outline-variant/30 rounded-full flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined">forum</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Profile Card 2 -->
+<div class="group relative rounded-lg overflow-hidden bg-white editorial-shadow transition-all hover:scale-[1.02] translate-y-4">
+<div class="h-80 overflow-hidden relative">
+<img alt="Profile 2" class="w-full h-full object-cover" data-alt="handsome young man in a smart casual suit standing in an urban setting soft lighting professional portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa3cPL9nfbUQsoSUgYjoVgVFtPZTTUw1pi-2lEu8qmZG-edskVdG0saerhhsVM8QHL1qIL8ygPK3OSs5Jxr2j2MiWyRUVAXd3gd8dnG-Dh5hDqZr_dMyg_29wBv1TJk3Qsf4mZRB-6CdlfRzoDULb5xOicrNJwUmHssJfr4atRqFo2jSxJPVdhFKItREw9kDp6BAeZXafzs0aROoIYANuf6J_aV_p9WjDyb4wZxpMb277BoDTKU4tcR1pkXHPq2tDdumsE5y0vFqg"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-bold font-headline">นนท์, 28</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> เชียงใหม่
+                                </p>
+</div>
+</div>
+<div class="mt-6 flex gap-3">
+<button class="flex-1 bg-surface-container-high text-primary py-2.5 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-lg">favorite</span> ถูกใจ
+                            </button>
+<button class="w-12 h-12 border border-outline-variant/30 rounded-full flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined">forum</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Profile Card 3 -->
+<div class="group relative rounded-lg overflow-hidden bg-white editorial-shadow transition-all hover:scale-[1.02]">
+<div class="h-80 overflow-hidden relative">
+<img alt="Profile 3" class="w-full h-full object-cover" data-alt="stylish young woman with long hair smiling playfully at camera close-up soft background tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzi11YXFAFv1yEwEmh9A-hPqp0k_8CGAmLlG0aL7sH9bBQYU2KGvqWPg3D_2GoC43IEsZ3losGjJMjXzv_gvnOXDFxTtcHlvJttKlrasRZqrPNHpE5pa-zFHeJ6_AwvPZWPzZqXeeh0Boo1-G9SPFBS_C1HHwzJqAmNzGmR2D293PmjzlaVJe_uX_-9DX5OqTOjoPX90MyALGZPHGqF6v2qCBBV1yNPqL6h_BJFQdzspwonjGT93b-uc_lF3A9edeW29oOZd728us"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-bold font-headline">มายด์, 24</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> ชลบุรี
+                                </p>
+</div>
+<div class="bg-tertiary-container text-on-tertiary-container px-2 py-0.5 rounded text-[10px] font-black tracking-tighter uppercase">Verified</div>
+</div>
+<div class="mt-6 flex gap-3">
+<button class="flex-1 bg-surface-container-high text-primary py-2.5 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-lg">favorite</span> ถูกใจ
+                            </button>
+<button class="w-12 h-12 border border-outline-variant/30 rounded-full flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined">forum</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Profile Card 4 -->
+<div class="group relative rounded-lg overflow-hidden bg-white editorial-shadow transition-all hover:scale-[1.02] translate-y-4">
+<div class="h-80 overflow-hidden relative">
+<img alt="Profile 4" class="w-full h-full object-cover" data-alt="well-dressed man in his 30s with a confident smile high end casual style outdoor city background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBRnzTYnDvS8z95hp2p42NHXNJoaazpTlk7-LaYoGEl5jrhVvVagmtkmfMyH3kYyzNwuazg5estkBVX-YmJxcHkugbB1T4zRIJjCcibYv5CCLIe2v11YF1QbObqbCGdgnUfKB81fPuV59A2AtRPuw9rgwDBJw6OBmk97iad2-IhU-Q6VAVl-uO-CQD5VWNrByM0WTSyhn0TD9Hg6Qr6SNLszUF2Fmp22h2MgY-MfVNr2vemBkOHLH1mLftL1_q1fTjpfOR6Jfqhww"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-bold font-headline">กานต์, 31</h3>
+<p class="text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> ขอนแก่น
+                                </p>
+</div>
+</div>
+<div class="mt-6 flex gap-3">
+<button class="flex-1 bg-surface-container-high text-primary py-2.5 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-lg">favorite</span> ถูกใจ
+                            </button>
+<button class="w-12 h-12 border border-outline-variant/30 rounded-full flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined">forum</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Steps Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="container mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-headline font-bold text-on-background">เริ่มต้นการเดินทางตามหารักแท้</h2>
+</div>
+<div class="relative">
+<div class="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-outline-variant/30 to-transparent -translate-y-1/2 z-0"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="w-20 h-20 rounded-full bg-white editorial-shadow flex items-center justify-center text-primary text-3xl font-bold border-4 border-surface">1</div>
+<h4 class="text-xl font-bold font-headline">สมัครสมาชิก</h4>
+<p class="text-sm text-on-surface-variant">ลงทะเบียนง่ายๆ ด้วยโซเชียลมีเดียหรืออีเมล</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="w-20 h-20 rounded-full bg-white editorial-shadow flex items-center justify-center text-primary text-3xl font-bold border-4 border-surface">2</div>
+<h4 class="text-xl font-bold font-headline">ตั้งค่าโปรไฟล์</h4>
+<p class="text-sm text-on-surface-variant">ใส่รูปถ่ายและระบุความสนใจของคุณเพื่อ AI ที่แม่นยำ</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="w-20 h-20 rounded-full bg-white editorial-shadow flex items-center justify-center text-primary text-3xl font-bold border-4 border-surface">3</div>
+<h4 class="text-xl font-bold font-headline">แมทช์กับคนที่ใช่</h4>
+<p class="text-sm text-on-surface-variant">เริ่มเลือกดูโปรไฟล์ที่เราคัดสรรมาให้คุณโดยเฉพาะ</p>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="w-20 h-20 rounded-full bg-white editorial-shadow flex items-center justify-center text-primary text-3xl font-bold border-4 border-surface">4</div>
+<h4 class="text-xl font-bold font-headline">เริ่มแชทและออกเดท</h4>
+<p class="text-sm text-on-surface-variant">ทำความรู้จักกันผ่านแชทและสร้างความทรงจำดีๆ</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-24 bg-surface">
+<div class="container mx-auto px-8">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="space-y-6">
+<span class="text-secondary font-bold tracking-[0.2em] label-md uppercase">เรื่องราวความสำเร็จ</span>
+<h2 class="text-4xl md:text-5xl font-headline font-bold text-on-background">พวกเขาพบความรักที่ LoveMatch</h2>
+<p class="text-on-surface-variant leading-relaxed">
+                        เราภูมิใจที่ได้เป็นส่วนหนึ่งในการเริ่มต้นความสัมพันธ์ของคนกว่าหลายพันคู่ทั่วประเทศ ความสำเร็จของคุณคือเป้าหมายสูงสุดของเรา
+                    </p>
+</div>
+<div class="grid gap-6">
+<!-- Review 1 -->
+<div class="bg-white p-8 rounded-lg editorial-shadow flex gap-6 items-center translate-x-4">
+<div class="w-20 h-20 rounded-full overflow-hidden shrink-0 ring-4 ring-pink-50">
+<img alt="Couple 1" class="w-full h-full object-cover" data-alt="happy smiling couple hugging in a cozy indoor setting warm sunlight filtered through window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYkBYNyVU12TBxfe3DpNm5OQmBTpXEmZSZ_wJ_SHIPTbrFd-XAMG1bYYPEda7O5YNUTgIg-OW9aHLPeMtHmXdDtmLdUrfFLUvKBZctHb1oUZBsBOJ1JdFfkT8TzeL2D05CzIu0bqXK4f-MEroeM5_5L39pkoYQT9wj-QTv-qoaNH2gSu43Y0ZmsFW4jCKfFzLThg7A5Ou45JyaUZGTFLZT3meKAjuYwc0yj76dTCWHK8XspFVTQ2g-hcG0AJoYF1bbbJsoFf5VSGA"/>
+</div>
+<div>
+<p class="text-on-surface font-medium italic mb-2">"ไม่คิดว่าจะได้เจอคนที่เข้ากันได้ดีขนาดนี้ ขอบคุณ LoveMatch ที่ช่วยกรองคนพรีเมียมให้จริงๆ ค่ะ"</p>
+<span class="text-sm font-bold text-primary">— จินนี่ &amp; ตั้ม, หมั้นกันแล้ว</span>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-white p-8 rounded-lg editorial-shadow flex gap-6 items-center -translate-x-4">
+<div class="w-20 h-20 rounded-full overflow-hidden shrink-0 ring-4 ring-purple-50">
+<img alt="User 2" class="w-full h-full object-cover" data-alt="portrait of a happy woman laughing outdoors with a blurred nature background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzyw2yS3wWMyHVp3rgs0tYAoTMAfVqAZkwoqALVFcY5TzKgLuaJ3HtKpg-tCOVBMFcuQXBDgZmzmgIQB_8oKO5ninl2H1AIR6kSVtuoDRlGQNPdopyIjjWsvzQQL5lrAlMAEPouENYw3x4QXnqS_m0WkNcLmQNCmbGgCNxLlsga-8Tc2Zqgx3sIt3T5OJVYcsJzURbKI9lLOHP1v0JouEEjaGMCZXtPCH7n88maNSQrZBokQf21EAeFv17y8gmv-OurV2ntSkqSbo"/>
+</div>
+<div>
+<p class="text-on-surface font-medium italic mb-2">"ระบบยืนยันตัวตนทำให้ผมรู้สึกมั่นใจที่จะคุยกับคนใหม่ๆ มากขึ้นครับ ใช้งานง่ายและสะอาดตามาก"</p>
+<span class="text-sm font-bold text-secondary">— คุณต้น, สมาชิก VIP</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="container mx-auto px-8 text-center">
+<h2 class="text-4xl font-headline font-bold mb-16">เลือกแผนที่เหมาะกับหัวใจคุณ</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+<!-- Free -->
+<div class="bg-white p-8 rounded-lg editorial-shadow flex flex-col items-center">
+<h3 class="text-xl font-bold font-headline mb-4">Free</h3>
+<div class="text-4xl font-black mb-6">฿0<span class="text-sm text-on-surface-variant font-normal">/เดือน</span></div>
+<ul class="space-y-4 mb-8 text-sm text-on-surface-variant text-left w-full">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-sm">check_circle</span> แมทช์ได้ 10 คน/วัน</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-sm">check_circle</span> แชทพื้นฐาน</li>
+<li class="flex items-center gap-2 text-on-surface-variant/40"><span class="material-symbols-outlined text-sm">cancel</span> ไม่เห็นคนมาไลก์เรา</li>
+</ul>
+<button class="w-full border border-outline py-3 rounded-full font-bold hover:bg-slate-50 transition-colors">เริ่มต้นใช้งาน</button>
+</div>
+<!-- Premium -->
+<div class="bg-gradient-to-b from-primary to-secondary p-8 rounded-lg editorial-shadow flex flex-col items-center text-white scale-105 relative">
+<div class="absolute -top-4 bg-tertiary text-on-tertiary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">แนะนำ</div>
+<h3 class="text-xl font-bold font-headline mb-4">Premium</h3>
+<div class="text-4xl font-black mb-6">฿299<span class="text-white/70 text-sm font-normal">/เดือน</span></div>
+<ul class="space-y-4 mb-8 text-sm text-white/90 text-left w-full">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-white text-sm">check_circle</span> แมทช์ไม่จำกัด</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-white text-sm">check_circle</span> เห็นคนที่มากดถูกใจคุณ</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-white text-sm">check_circle</span> บูสต์โปรไฟล์รายสัปดาห์</li>
+</ul>
+<button class="w-full bg-white text-primary py-3 rounded-full font-bold shadow-lg shadow-black/10 hover:scale-105 transition-transform">สมัครเลย</button>
+</div>
+<!-- VIP -->
+<div class="bg-white p-8 rounded-lg editorial-shadow flex flex-col items-center">
+<h3 class="text-xl font-bold font-headline mb-4">VIP Gold</h3>
+<div class="text-4xl font-black mb-6">฿599<span class="text-sm text-on-surface-variant font-normal">/เดือน</span></div>
+<ul class="space-y-4 mb-8 text-sm text-on-surface-variant text-left w-full">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-sm">check_circle</span> ทุกอย่างใน Premium</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-sm">check_circle</span> มี Concierge ช่วยจับคู่</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-green-500 text-sm">check_circle</span> เข้าถึงกิจกรรม Exclusive</li>
+</ul>
+<button class="w-full border border-outline py-3 rounded-full font-bold hover:bg-slate-50 transition-colors">ยกระดับสู่ VIP</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-rose-50 w-full py-12 px-8">
+<div class="flex flex-col md:flex-row justify-between items-start max-w-7xl mx-auto space-y-12 md:space-y-0">
+<div class="space-y-6">
+<div class="text-lg font-bold text-pink-600 font-headline">LoveMatch</div>
+<p class="text-on-surface-variant max-w-xs text-sm">แพลตฟอร์มหาคู่ระดับพรีเมียมอันดับ 1 ในไทย ที่ให้ความสำคัญกับความปลอดภัยและคุณภาพของความสัมพันธ์</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary editorial-shadow hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary editorial-shadow hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary editorial-shadow hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined">chat_bubble</span></a>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12 md:gap-24">
+<div class="space-y-4">
+<h5 class="font-bold text-on-background font-headline">บริษัท</h5>
+<nav class="flex flex-col gap-2">
+<a class="text-slate-500 hover:text-pink-400 text-sm transition-colors" href="#">เกี่ยวกับเรา</a>
+<a class="text-slate-500 hover:text-pink-400 text-sm transition-colors" href="#">ร่วมงานกับเรา</a>
+<a class="text-slate-500 hover:text-pink-400 text-sm transition-colors" href="#">บล็อก</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h5 class="font-bold text-on-background font-headline">ความช่วยเหลือ</h5>
+<nav class="flex flex-col gap-2">
+<a class="text-slate-500 hover:text-pink-400 text-sm transition-colors" href="#">ติดต่อเรา</a>
+<a class="text-slate-500 hover:text-pink-400 text-sm transition-colors" href="#">FAQ</a>
+<a class="text-slate-500 hover:text-pink-400 text-sm transition-colors" href="#">ศูนย์ความปลอดภัย</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h5 class="font-bold text-on-background font-headline">กฎหมาย</h5>
+<nav class="flex flex-col gap-2">
+<a class="text-slate-500 hover:text-pink-400 text-sm transition-colors" href="#">นโยบายความเป็นส่วนตัว</a>
+<a class="text-slate-500 hover:text-pink-400 text-sm transition-colors" href="#">ข้อตกลงการใช้งาน</a>
+</nav>
+</div>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-pink-100/30 text-center max-w-7xl mx-auto">
+<p class="text-slate-400 text-xs font-be-vietnam tracking-tight">© 2024 LoveMatch. All rights reserved. ออกแบบมาเพื่อคนพิเศษเช่นคุณ</p>
+</div>
+</footer>
+</body></html>

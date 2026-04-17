@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Gift Management - LoveMatch</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#560020",
+                    "background": "#fff8f8",
+                    "on-secondary-fixed-variant": "#9128ad",
+                    "error-container": "#f56965",
+                    "on-tertiary-fixed": "#453900",
+                    "surface": "#fff8f8",
+                    "on-primary-fixed-variant": "#8d003a",
+                    "on-primary-container": "#7d0032",
+                    "inverse-on-surface": "#ac989f",
+                    "on-surface": "#432c36",
+                    "tertiary-fixed-dim": "#efc900",
+                    "on-error-container": "#65000b",
+                    "surface-dim": "#f7d0df",
+                    "surface-variant": "#fed9e7",
+                    "on-secondary-container": "#8619a2",
+                    "tertiary-fixed": "#ffd709",
+                    "on-background": "#432c36",
+                    "outline-variant": "#cba9b6",
+                    "on-tertiary-fixed-variant": "#665500",
+                    "on-error": "#fff7f6",
+                    "surface-container-highest": "#fed9e7",
+                    "on-secondary-fixed": "#6d0087",
+                    "primary-fixed": "#ffa9b9",
+                    "surface-container-high": "#ffe0eb",
+                    "on-secondary": "#fff7fb",
+                    "on-tertiary": "#fff8ec",
+                    "primary": "#bd0050",
+                    "tertiary-container": "#ffd709",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#5b4b00",
+                    "primary-container": "#ffa9b9",
+                    "surface-container-low": "#fff0f4",
+                    "primary-fixed-dim": "#ff93aa",
+                    "on-surface-variant": "#735763",
+                    "outline": "#90737f",
+                    "secondary-container": "#fdd6ff",
+                    "surface-container": "#ffe8f0",
+                    "inverse-surface": "#160b10",
+                    "secondary-fixed-dim": "#f8c3ff",
+                    "secondary-dim": "#871ba4",
+                    "surface-tint": "#bd0050",
+                    "inverse-primary": "#ff4d81",
+                    "error-dim": "#70030f",
+                    "surface-bright": "#fff8f8",
+                    "on-primary": "#fff7f7",
+                    "error": "#ac3434",
+                    "tertiary-dim": "#635200",
+                    "secondary-fixed": "#fdd6ff",
+                    "tertiary": "#705e00",
+                    "primary-dim": "#a70046",
+                    "secondary": "#952cb1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Be Vietnam Pro"],
+                    "label": ["Be Vietnam Pro"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Be Vietnam Pro', sans-serif; background-color: #fff8f8; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .ghost-border { border: 1px solid rgba(144, 115, 127, 0.15); }
+    </style>
+</head>
+<body class="text-on-background min-h-screen flex">
+<!-- SideNavBar Component -->
+<aside class="h-screen w-72 rounded-r-3xl sticky left-0 top-0 bg-white/60 dark:bg-slate-900/60 backdrop-blur-2xl flex flex-col py-8 space-y-2 ambient shadow-2xl shadow-pink-500/5 z-50">
+<div class="px-8 mb-8">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="Professional admin user avatar in a soft-lit studio setting with warm skin tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCO6qHe8fqIEIymfSBw7R9svjWkUMlHAvPuGj14-o-j_OJkzTS00DI2yeer9sQsdozUaLMlp-uN3WBd8b0zyyjmvGCR0vxs6Al26coAhA0Y-kkIFn_lGgk1j7Pgjg3jaaE-TH5T9wMz_96PWiguQLdS4oFdO1ZwPqPwvKe5Xmm6qGb4VorCTnHrVPbyyUC3DTG0YicWFvMaX45PyDfu0WTgey7aG2eGg--mcRm8Io6UH5-gt0ZtnULoSvnhUWtfWSIyZwsX-EJFkE"/>
+</div>
+<div>
+<h3 class="text-on-surface font-headline font-bold text-lg leading-tight">ยินดีต้อนรับ</h3>
+<p class="text-on-surface-variant text-xs">ค้นหาคู่แท้ของคุณ</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col space-y-2">
+<a class="text-slate-500 mx-4 px-6 py-3 hover:text-pink-500 hover:bg-rose-50 rounded-full transition-all flex items-center gap-4" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium">แดชบอร์ด</span>
+</a>
+<a class="text-slate-500 mx-4 px-6 py-3 hover:text-pink-500 hover:bg-rose-50 rounded-full transition-all flex items-center gap-4" href="#">
+<span class="material-symbols-outlined" data-icon="person_search">person_search</span>
+<span class="font-medium">ค้นหาคู่</span>
+</a>
+<a class="text-slate-500 mx-4 px-6 py-3 hover:text-pink-500 hover:bg-rose-50 rounded-full transition-all flex items-center gap-4" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-medium">แมทช์</span>
+</a>
+<a class="text-slate-500 mx-4 px-6 py-3 hover:text-pink-500 hover:bg-rose-50 rounded-full transition-all flex items-center gap-4" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-medium">ข้อความ</span>
+</a>
+<a class="text-slate-500 mx-4 px-6 py-3 hover:text-pink-500 hover:bg-rose-50 rounded-full transition-all flex items-center gap-4" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-medium">กระเป๋าเงิน</span>
+</a>
+<!-- Active State for Admin/Settings -->
+<a class="bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full mx-4 px-6 py-3 shadow-lg shadow-pink-200 flex items-center gap-4 translate-x-1 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-medium">ตั้งค่า</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<div class="bg-surface-container-low p-6 rounded-2xl relative overflow-hidden">
+<div class="relative z-10">
+<p class="text-primary font-bold text-sm mb-2">อัปเกรดเป็น Premium</p>
+<p class="text-on-surface-variant text-xs mb-4">เข้าถึงฟีเจอร์จัดการขั้นสูงและสถิติเชิงลึก</p>
+<button class="w-full bg-white text-primary text-xs font-bold py-2 rounded-full shadow-sm hover:bg-pink-50 transition-colors">อัปเกรดเลย</button>
+</div>
+<div class="absolute -right-4 -bottom-4 w-20 h-20 bg-primary/10 rounded-full blur-2xl"></div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-8 lg:p-12 overflow-y-auto">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
+<div>
+<h1 class="text-4xl font-headline font-extrabold text-on-surface tracking-tight mb-2">จัดการของขวัญ</h1>
+<p class="text-on-surface-variant">ดูแลและจัดการคลังของขวัญดิจิทัลทั้งหมดของ LoveMatch</p>
+</div>
+<button class="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-bold shadow-xl shadow-pink-200 flex items-center gap-2 hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                เพิ่มของขวัญใหม่
+            </button>
+</header>
+<!-- Stats Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<div class="md:col-span-2 glass-card rounded-xl p-8 ghost-border relative overflow-hidden group">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h2 class="text-xl font-headline font-bold text-on-surface">สถิติของขวัญยอดนิยม</h2>
+<p class="text-on-surface-variant text-sm">อัปเดตล่าสุด: วันนี้ 09:41</p>
+</div>
+<span class="material-symbols-outlined text-secondary" data-icon="trending_up">trending_up</span>
+</div>
+<div class="flex items-end gap-4 h-32">
+<div class="flex-1 bg-surface-container-highest rounded-t-lg group-hover:bg-primary/20 transition-colors" style="height: 45%;"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-lg group-hover:bg-primary/20 transition-colors" style="height: 70%;"></div>
+<div class="flex-1 bg-gradient-to-t from-primary to-secondary rounded-t-lg" style="height: 100%;"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-lg group-hover:bg-primary/20 transition-colors" style="height: 60%;"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-lg group-hover:bg-primary/20 transition-colors" style="height: 85%;"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-lg group-hover:bg-primary/20 transition-colors" style="height: 50%;"></div>
+</div>
+<div class="flex justify-between mt-4 text-xs text-on-surface-variant font-medium">
+<span>ดอกไม้</span><span>อาหาร</span><span>เครื่องประดับ</span><span>เครื่องดื่ม</span><span>พรีเมียม</span><span>อื่นๆ</span>
+</div>
+</div>
+<div class="glass-card rounded-xl p-8 ghost-border flex flex-col justify-center items-center text-center">
+<div class="w-20 h-20 bg-secondary-container rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="card_giftcard">card_giftcard</span>
+</div>
+<div class="text-3xl font-headline font-extrabold text-on-surface">1,284</div>
+<p class="text-on-surface-variant text-sm">ส่งแล้ววันนี้</p>
+<div class="mt-4 px-3 py-1 bg-emerald-50 text-emerald-600 text-xs font-bold rounded-full">+12.5% จากเมื่อวาน</div>
+</div>
+</section>
+<!-- Category & Filters -->
+<section class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+<div class="flex gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0">
+<button class="bg-primary text-white px-6 py-2 rounded-full text-sm font-medium whitespace-nowrap shadow-md">ทั้งหมด</button>
+<button class="bg-surface-container-high text-on-surface-variant px-6 py-2 rounded-full text-sm font-medium whitespace-nowrap hover:bg-surface-container-highest transition-colors">ดอกไม้</button>
+<button class="bg-surface-container-high text-on-surface-variant px-6 py-2 rounded-full text-sm font-medium whitespace-nowrap hover:bg-surface-container-highest transition-colors">เครื่องประดับ</button>
+<button class="bg-surface-container-high text-on-surface-variant px-6 py-2 rounded-full text-sm font-medium whitespace-nowrap hover:bg-surface-container-highest transition-colors">อาหารและเครื่องดื่ม</button>
+<button class="text-primary px-4 py-2 flex items-center gap-1 text-sm font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span> จัดการหมวดหมู่
+                </button>
+</div>
+<div class="relative w-full md:w-72">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-3 pl-12 pr-6 focus:ring-2 focus:ring-primary/20 text-sm" placeholder="ค้นหาของขวัญ..." type="text"/>
+</div>
+</section>
+<!-- Gift Inventory Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Gift Card 1 -->
+<div class="group">
+<div class="bg-surface-container-low rounded-xl p-4 transition-all duration-300 group-hover:translate-y-[-8px] group-hover:shadow-2xl group-hover:shadow-pink-200/50">
+<div class="aspect-square rounded-lg overflow-hidden mb-4 relative">
+<img class="w-full h-full object-cover" data-alt="A beautiful bouquet of red and pink roses in a premium digital illustration style with soft ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-tyODV6iW84w7PAzostnddBB9ESQt5z3Nbqc1_4BjyotsgtqfCSzid6E_stksdqb4II9hJDl9g71IxBek_gvXIzFv-gDUrGMIfDjgfmlHVARG2xMAUzVl9J_uuIMvmaif7mmRRJxxeF2aGfWoJczagouXqLtuQ7OUI7ob6Q4sfRzuiJVR1ftHxg99-spfJ7Ti0lCA7xNgHonUiQbcn29p4O4N09GtoAjMedgKokEG0FqgqU5vOt6slg1kGKaxxm9yyVCrna8Tvis"/>
+<div class="absolute top-3 right-3">
+<span class="bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-primary ghost-border uppercase tracking-wider">Popular</span>
+</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-on-surface">ช่อกุหลาบอมตะ</h3>
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-sm" data-icon="monetization_on" style="font-variation-settings: 'FILL' 1;">monetization_on</span>
+<span class="text-sm font-bold">299</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant mb-4">หมวดหมู่: ดอกไม้</p>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-high text-primary py-2 rounded-full text-xs font-bold hover:bg-primary hover:text-white transition-all">แก้ไข</button>
+<button class="w-10 h-10 flex items-center justify-center bg-rose-50 text-error rounded-full hover:bg-error hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Gift Card 2 -->
+<div class="group">
+<div class="bg-surface-container-low rounded-xl p-4 transition-all duration-300 group-hover:translate-y-[-8px] group-hover:shadow-2xl group-hover:shadow-pink-200/50">
+<div class="aspect-square rounded-lg overflow-hidden mb-4 relative">
+<img class="w-full h-full object-cover" data-alt="Exquisite box of luxury Belgian chocolates with a silk ribbon in a soft-focus elegant setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdev3hjqx675znBKOSK0f6rGzoT2vm016ZyQnBfW-eg3xaEj9AYB4pqr_0VOrB5L6U0uiFSr3pIIkNtyDJdG2H0Ov7AaolP7-ix9njrDaK-CxAITsvRfcj84Ku6uIR2IiiA1vabJf73Jv54ctGj7JmeUuXYSwFfkNgRWGzqMbux-RL2thkbD9IiMXIlod7Q2aIZigrXe2ctfOQvzpTPV1EbEk-oepapQqeKfW_513L06H0GSIVgJ0L16HPaM6e20pjVedoRoI1IhI"/>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-on-surface">ช็อกโกแลตพรีเมียม</h3>
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-sm" data-icon="monetization_on" style="font-variation-settings: 'FILL' 1;">monetization_on</span>
+<span class="text-sm font-bold">150</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant mb-4">หมวดหมู่: อาหาร</p>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-high text-primary py-2 rounded-full text-xs font-bold hover:bg-primary hover:text-white transition-all">แก้ไข</button>
+<button class="w-10 h-10 flex items-center justify-center bg-rose-50 text-error rounded-full hover:bg-error hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Gift Card 3 -->
+<div class="group">
+<div class="bg-surface-container-low rounded-xl p-4 transition-all duration-300 group-hover:translate-y-[-8px] group-hover:shadow-2xl group-hover:shadow-pink-200/50">
+<div class="aspect-square rounded-lg overflow-hidden mb-4 relative">
+<img class="w-full h-full object-cover" data-alt="Elegant diamond necklace displayed on a soft velvet cushion with romantic cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2b2H0fMbSMrUy7lAyhKhNemxJ3gMe89uqIDK8ooOgoUVxIBCjmYzXDenbSjjfq16mOCkD0YzY77o9cKenJvEL_Ya-X0Xr8IUJ3XgSYsHCO5xMCECZQa6RpOIMcUgcu6dq8HDmrUzKtUorTdnuvY9LJHPT0SJseozbnSero2I8SoAsMHsEWsW8rMT1ajooR2QJ5yDAeDo6cXhDBHCn7TXhYNrmoQdL7Q7jlCzDhfTfsXIQH8ja3cNwuTrkcBvn8wPbrpQp6_V3zJ0"/>
+<div class="absolute top-3 right-3">
+<span class="bg-tertiary/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-on-tertiary ghost-border uppercase tracking-wider">Premium</span>
+</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-on-surface">สร้อยเพชรล้ำค่า</h3>
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-sm" data-icon="monetization_on" style="font-variation-settings: 'FILL' 1;">monetization_on</span>
+<span class="text-sm font-bold">999</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant mb-4">หมวดหมู่: เครื่องประดับ</p>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container-high text-primary py-2 rounded-full text-xs font-bold hover:bg-primary hover:text-white transition-all">แก้ไข</button>
+<button class="w-10 h-10 flex items-center justify-center bg-rose-50 text-error rounded-full hover:bg-error hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Gift Card 4 (New Item Template) -->
+<div class="group">
+<div class="h-full bg-surface-container rounded-xl border-2 border-dashed border-outline-variant flex flex-col justify-center items-center p-8 text-center cursor-pointer hover:border-primary/50 hover:bg-rose-50 transition-all">
+<div class="w-16 h-16 rounded-full bg-white flex items-center justify-center mb-4 shadow-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="add">add</span>
+</div>
+<p class="font-bold text-on-surface">เพิ่มรายการใหม่</p>
+<p class="text-xs text-on-surface-variant mt-2">สร้างไอเทมของขวัญดิจิทัลใหม่ให้ผู้ใช้ได้เลือกส่ง</p>
+</div>
+</div>
+</section>
+<!-- Category Management Quick View -->
+<section class="mt-16 bg-white rounded-3xl p-8 shadow-sm ghost-border">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+<div>
+<h2 class="text-2xl font-headline font-bold text-on-surface">จัดการหมวดหมู่</h2>
+<p class="text-on-surface-variant">ปรับแต่งและจัดเรียงประเภทของขวัญ</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-2 px-6 py-2 rounded-full border border-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="playlist_add">playlist_add</span>
+                    สร้างหมวดหมู่ใหม่
+                </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex items-center justify-between p-4 rounded-2xl bg-surface-container-low border border-transparent hover:border-primary/20 transition-all cursor-move">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="local_florist">local_florist</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">ดอกไม้</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">12 รายการ</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<div class="flex items-center justify-between p-4 rounded-2xl bg-surface-container-low border border-transparent hover:border-primary/20 transition-all cursor-move">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="diamond">diamond</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">เครื่องประดับ</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">8 รายการ</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="drag_indicator">drag_indicator</span>
+</div>
+<div class="flex items-center justify-between p-4 rounded-2xl bg-surface-container-low border border-transparent hover:border-primary/20 transition-all cursor-move">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-tertiary/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="restaurant">restaurant</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">อาหาร/เครื่องดื่ม</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">15 รายการ</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="drag_indicator">drag_indicator</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Modal Placeholder (Hidden by default, shown here for structure) -->
+<!-- This represents the Add New Gift Modal as requested -->
+<div class="fixed inset-0 bg-on-background/20 backdrop-blur-sm z-[100] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300 overflow-hidden">
+<div class="bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden translate-y-8 transition-transform duration-300">
+<div class="p-8 border-b ghost-border">
+<div class="flex justify-between items-center">
+<h2 class="text-2xl font-headline font-bold text-on-surface">เพิ่มของขวัญใหม่</h2>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-rose-50 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+</div>
+<div class="p-8 space-y-6">
+<!-- Upload Area -->
+<div class="w-full h-40 border-2 border-dashed border-outline-variant rounded-2xl flex flex-col items-center justify-center gap-2 bg-surface-container-lowest hover:bg-rose-50 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="upload_file">upload_file</span>
+<p class="text-sm font-medium text-on-surface-variant">คลิกเพื่ออัปโหลดรูปภาพของขวัญ (PNG/WebP)</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-sm font-bold text-on-surface">ชื่อของขวัญ</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary/20" placeholder="ระบุชื่อ" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-on-surface">ราคาเหรียญ</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary/20" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-on-surface">หมวดหมู่</label>
+<select class="w-full bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary/20">
+<option>เลือกหมวดหมู่</option>
+<option>ดอกไม้</option>
+<option>เครื่องประดับ</option>
+<option>อาหารและเครื่องดื่ม</option>
+</select>
+</div>
+<div class="flex gap-4 pt-4">
+<button class="flex-1 py-4 rounded-full font-bold text-on-surface-variant bg-surface-container-high hover:bg-surface-container-highest transition-colors">ยกเลิก</button>
+<button class="flex-1 py-4 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-purple-600 shadow-lg shadow-pink-200">บันทึกรายการ</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Component -->
+<footer class="fixed bottom-0 left-72 right-0 bg-rose-50/80 backdrop-blur-md py-6 px-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 border-t ghost-border z-40">
+<p>© 2024 LoveMatch. All rights reserved.</p>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="hover:text-pink-400 transition-opacity" href="#">เกี่ยวกับเรา</a>
+<a class="hover:text-pink-400 transition-opacity" href="#">นโยบายความเป็นส่วนตัว</a>
+<a class="hover:text-pink-400 transition-opacity" href="#">ข้อตกลงการใช้งาน</a>
+<a class="hover:text-pink-400 transition-opacity" href="#">ติดต่อเรา</a>
+<a class="hover:text-pink-400 transition-opacity" href="#">FAQ</a>
+</div>
+</footer>
+</body></html>

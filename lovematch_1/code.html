@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="light" lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LoveMatch - เข้าสู่ระบบและสมัครสมาชิก</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#560020",
+                        "background": "#fff8f8",
+                        "on-secondary-fixed-variant": "#9128ad",
+                        "error-container": "#f56965",
+                        "on-tertiary-fixed": "#453900",
+                        "surface": "#fff8f8",
+                        "on-primary-fixed-variant": "#8d003a",
+                        "on-primary-container": "#7d0032",
+                        "inverse-on-surface": "#ac989f",
+                        "on-surface": "#432c36",
+                        "tertiary-fixed-dim": "#efc900",
+                        "on-error-container": "#65000b",
+                        "surface-dim": "#f7d0df",
+                        "surface-variant": "#fed9e7",
+                        "on-secondary-container": "#8619a2",
+                        "tertiary-fixed": "#ffd709",
+                        "on-background": "#432c36",
+                        "outline-variant": "#cba9b6",
+                        "on-tertiary-fixed-variant": "#665500",
+                        "on-error": "#fff7f6",
+                        "surface-container-highest": "#fed9e7",
+                        "on-secondary-fixed": "#6d0087",
+                        "primary-fixed": "#ffa9b9",
+                        "surface-container-high": "#ffe0eb",
+                        "on-secondary": "#fff7fb",
+                        "on-tertiary": "#fff8ec",
+                        "primary": "#bd0050",
+                        "tertiary-container": "#ffd709",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#5b4b00",
+                        "primary-container": "#ffa9b9",
+                        "surface-container-low": "#fff0f4",
+                        "primary-fixed-dim": "#ff93aa",
+                        "on-surface-variant": "#735763",
+                        "outline": "#90737f",
+                        "secondary-container": "#fdd6ff",
+                        "surface-container": "#ffe8f0",
+                        "inverse-surface": "#160b10",
+                        "secondary-dim": "#871ba4",
+                        "surface-tint": "#bd0050",
+                        "inverse-primary": "#ff4d81",
+                        "error-dim": "#70030f",
+                        "surface-bright": "#fff8f8",
+                        "on-primary": "#fff7f7",
+                        "error": "#ac3434",
+                        "tertiary-dim": "#635200",
+                        "secondary-fixed": "#fdd6ff",
+                        "tertiary": "#705e00",
+                        "primary-dim": "#a70046",
+                        "secondary": "#952cb1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Be Vietnam Pro"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 30px 50px -12px rgba(67, 44, 54, 0.04);
+        }
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #fff8f8;
+            color: #432c36;
+        }
+        h1, h2, h3, .headline {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+<main class="flex min-h-screen">
+<!-- Left Side: Visual Storytelling Section -->
+<section class="hidden lg:flex w-1/2 relative overflow-hidden bg-surface-container-low p-12 flex-col justify-between">
+<div class="absolute inset-0 z-0">
+<img alt="Romantic Journey" class="w-full h-full object-cover opacity-90 mix-blend-multiply" data-alt="romantic couple sitting together in a field of flowers at sunset, soft pink and golden lighting, warm ethereal atmosphere, high-end editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpPDxhAJ1AbnSFcZe_i1_AudfE2DP2fVYwHZHIW9InbN4FN4N8kexqnwZkK8HC9Tm7YsWvhPDKQjF9deG7HFJcRr7VKXgCDesy090-gvAKj4s50QLduxbxJjrCrgaualI3dQCQHD0XCTm8Az8icnHTT1lVyA-mJUAmS4evqjaTM-jHc-x5NvnlNudM1MrsvvVGpo2a5qdgTpbyozvp6vJZBlB5CuaaPaQ8hSmQmS0lxP2NCrpa1kwe_3OQpVtAbD89bKzwFKaV5Hs"/>
+<!-- Soft Tonal Overlay -->
+<div class="absolute inset-0 bg-gradient-to-tr from-pink-500/20 to-purple-600/10"></div>
+</div>
+<div class="relative z-10">
+<div class="text-white space-y-4">
+<h1 class="text-5xl font-extrabold tracking-tight leading-tight">เริ่มต้นการเดินทาง<br/>ตามหารักแท้</h1>
+<p class="text-xl font-light text-surface-container-low opacity-90 max-w-md">ให้ LoveMatch เป็นกุญแจสำคัญที่จะเปิดประตูสู่ความสัมพันธ์ที่ยั่งยืนและมีความหมายสำหรับคุณ</p>
+</div>
+</div>
+<div class="relative z-10">
+<div class="bg-white/20 backdrop-blur-xl p-6 rounded-lg border border-white/10 flex items-center gap-4">
+<div class="flex -space-x-3">
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-white" data-alt="portrait of a smiling woman with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMcvRVqQpEFcwbm-i9aVAYeRnUfqcOK9ctfb9tsoGl0rryRUIRgm7mxZSnv4MAU0HU5v5yDdsIxtwMY7NsgD5NZQgE-99yjTDeH-vOxtpPg8vqH6mONS1pzqEHAZzT5wR8gTfGxlERX3ZBOHtdfIjvjsvwGgBOAE5y_p5q4yCiiNP3bwHbXRlvoIckm0rN5reefsoZwiBi9prmSQEhfHwqV0c_mbxMWGC6YcwewWrLe9wbEX-AmcPBm7ZleVXYEBJ8kAfTUk5Itzg"/>
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-white" data-alt="portrait of a happy man in a casual setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpkKr7hKiJos0GQHLJRZltWl0IHg6cS7XcxP75LXha8t6M2IarjOuxGiX_pJxesX6vcSNYK0GPfbi3bOSwDM99rok5mVq8YjCe3eQaEkKctOkgGrw3OuPeJmohPKazW6dXSScUpU9IEglOqJKb0x0gF4HNp0YMnYrkmJUdeR6KvANAPzg0ItRlcsejvImm7QWJkkQyMZ03Hr0I3Q07AI5b6Bii8XlSgWw2eQdXioxckDhQBVNYgGa5khSbHbJkizQpza6964rk_1o"/>
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-white" data-alt="close up of a cheerful man outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCSTUrNgJraIJpLgot9r9dclIUXCL4L90l-tIqhFgn9bJQdaMITReAksGsTPC-aJR2KlswWPSH9E0RVa2bt4pPAwuIN8MCUFsu6UmFuRkwFPA_lkdCfh5S0Ae-c4kqdglYq8tAqQUiVcKjyjYw7Nbk5rl7hprt6bL3eWH4ruWbM_akeod_6DFhLHwlmLIuHSonFTX8VbNrnHDS0pFj-tW6J8p5gM-trlFUYUbjUvHbwd1j-6AsJUliRN9vwzQkyji1JqLtk9TQdpo"/>
+</div>
+<p class="text-white text-sm font-medium">กว่า 10,000+ คู่ที่พบคู่แท้ผ่านเรา</p>
+</div>
+</div>
+</section>
+<!-- Right Side: Interaction Canvas -->
+<section class="w-full lg:w-1/2 flex flex-col items-center justify-center p-8 md:p-16 lg:p-24 bg-surface">
+<div class="w-full max-w-md space-y-10">
+<!-- Brand Anchor -->
+<div class="text-center lg:text-left">
+<span class="text-3xl font-black bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">LoveMatch</span>
+</div>
+<!-- Toggle Navigation (Login Tab Active) -->
+<div class="flex justify-center lg:justify-start space-x-8">
+<button class="text-pink-600 dark:text-pink-400 font-bold border-b-2 border-pink-500 pb-1 text-lg">เข้าสู่ระบบ</button>
+<button class="text-slate-600 dark:text-slate-300 hover:text-pink-500 transition-colors text-lg">สมัครสมาชิก</button>
+</div>
+<!-- Form Section -->
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="block text-sm font-medium text-on-surface-variant ml-2">อีเมล</label>
+<input class="w-full px-6 py-4 rounded-full bg-surface-container-low border-none focus:ring-2 focus:ring-pink-200 outline-none transition-all duration-300 placeholder:text-outline-variant" placeholder="example@mail.com" type="email"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center px-2">
+<label class="text-sm font-medium text-on-surface-variant">รหัสผ่าน</label>
+<a class="text-xs text-pink-600 font-semibold hover:underline transition-all" href="#">ลืมรหัสผ่าน?</a>
+</div>
+<input class="w-full px-6 py-4 rounded-full bg-surface-container-low border-none focus:ring-2 focus:ring-pink-200 outline-none transition-all duration-300 placeholder:text-outline-variant" placeholder="••••••••" type="password"/>
+</div>
+<button class="w-full py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full font-bold text-lg shadow-lg shadow-pink-200/50 hover:scale-[1.02] active:scale-95 transition-transform duration-300" type="submit">
+                        เข้าสู่ระบบ
+                    </button>
+</form>
+<!-- Divider -->
+<div class="relative flex items-center py-4">
+<div class="flex-grow border-t border-outline-variant/30"></div>
+<span class="flex-shrink mx-4 text-outline-variant text-sm">หรือดำเนินการต่อด้วย</span>
+<div class="flex-grow border-t border-outline-variant/30"></div>
+</div>
+<!-- Social Login Buttons -->
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 py-3 px-6 rounded-full bg-surface-container-lowest border border-outline-variant/20 hover:bg-surface-container-low transition-all duration-300">
+<img alt="Google" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALo717hFFSeQ26NiqszY75YwvezmFO_9QOtTrxslfTNHRqp9s6EALy0E16s_VWPYMZowa2t5Xho9W9q1g0usLVu5IB2aNSFxmzaagMsiBchNtNqPceFEr00TUUhWihQfoPVAVqsFWSvZSntuCz2ManX5Y7nxTgu3jgSB1YKj0IJhMPaqfp2Q2YUcEuqp0hU0T7rkoEKgiLGM86ETVz0X7yw23m4wYvA2Dn9diqc3uqa5ln1Uh_XFj6XIxarS8ljSlsPk_AtjML50U"/>
+<span class="text-sm font-medium">Google</span>
+</button>
+<button class="flex items-center justify-center gap-3 py-3 px-6 rounded-full bg-[#1877F2] text-white hover:opacity-90 transition-all duration-300">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+<span class="text-sm font-medium">Facebook</span>
+</button>
+</div>
+<!-- Toggle Link -->
+<p class="text-center text-on-surface-variant">
+                    ยังไม่มีบัญชี? 
+                    <a class="text-pink-600 font-bold ml-1 hover:underline" href="#">สมัครสมาชิกที่นี่</a>
+</p>
+<!-- Trust Message -->
+<div class="pt-8 text-center">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container-low rounded-full">
+<span class="material-symbols-outlined text-pink-600 text-sm" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-xs text-on-surface-variant/80 font-medium tracking-tight">ข้อมูลของคุณจะถูกเก็บเป็นความลับและปลอดภัย 100%</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- UI STATE: Registration Modal/Overlay Preview (Hidden for focus but defined) -->
+<div class="hidden fixed inset-0 z-[60] bg-white/95 backdrop-blur-3xl flex items-center justify-center p-6" id="register-state">
+<div class="w-full max-w-2xl bg-white rounded-xl editorial-shadow p-12 relative">
+<button class="absolute top-8 right-8 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="space-y-10">
+<header class="space-y-2">
+<h2 class="text-3xl font-extrabold text-primary">สมัครสมาชิก</h2>
+<p class="text-on-surface-variant">เพื่อมอบประสบการณ์ที่ดีที่สุด เราขอข้อมูลเบื้องต้นเกี่ยวกับคุณ</p>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="text-sm font-medium text-on-surface-variant ml-2">ชื่อของคุณ</label>
+<input class="w-full px-6 py-4 rounded-full bg-surface-container-low border-none focus:ring-2 focus:ring-pink-200 outline-none" placeholder="ระบุชื่อจริงหรือชื่อเล่น" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium text-on-surface-variant ml-2">วันเกิด</label>
+<input class="w-full px-6 py-4 rounded-full bg-surface-container-low border-none focus:ring-2 focus:ring-pink-200 outline-none" type="date"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium text-on-surface-variant ml-2">เพศ</label>
+<div class="flex gap-4">
+<button class="flex-1 py-3 px-6 rounded-full border border-pink-500 text-pink-600 font-medium">ชาย</button>
+<button class="flex-1 py-3 px-6 rounded-full bg-surface-container-low text-on-surface-variant">หญิง</button>
+<button class="flex-1 py-3 px-6 rounded-full bg-surface-container-low text-on-surface-variant">อื่นๆ</button>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium text-on-surface-variant ml-2">ความสนใจ</label>
+<select class="w-full px-6 py-4 rounded-full bg-surface-container-low border-none focus:ring-2 focus:ring-pink-200 outline-none appearance-none">
+<option>มองหาความสัมพันธ์ระยะยาว</option>
+<option>หาเพื่อนคุย</option>
+<option>ยังไม่แน่ใจ</option>
+</select>
+</div>
+</div>
+<button class="w-full py-5 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full font-bold text-xl shadow-xl shadow-pink-200 transition-all hover:-translate-y-1">
+                    สร้างบัญชีผู้ใช้งาน
+                </button>
+</div>
+</div>
+</div>
+<footer class="fixed bottom-0 left-0 w-full p-8 hidden lg:block pointer-events-none">
+<div class="flex justify-between items-center opacity-60 text-xs font-medium tracking-wide max-w-full mx-auto">
+<span class="text-on-surface-variant">© 2024 LoveMatch. All rights reserved.</span>
+<div class="flex gap-6 pointer-events-auto">
+<a class="hover:text-primary transition-colors" href="#">เกี่ยวกับเรา</a>
+<a class="hover:text-primary transition-colors" href="#">นโยบายความเป็นส่วนตัว</a>
+<a class="hover:text-primary transition-colors" href="#">ข้อตกลงการใช้งาน</a>
+</div>
+</div>
+</footer>
+</body></html>

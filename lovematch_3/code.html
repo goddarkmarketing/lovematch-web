@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="light" lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Member Management - LoveMatch</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#560020",
+                        "background": "#fff8f8",
+                        "on-secondary-fixed-variant": "#9128ad",
+                        "error-container": "#f56965",
+                        "on-tertiary-fixed": "#453900",
+                        "surface": "#fff8f8",
+                        "on-primary-fixed-variant": "#8d003a",
+                        "on-primary-container": "#7d0032",
+                        "inverse-on-surface": "#ac989f",
+                        "on-surface": "#432c36",
+                        "tertiary-fixed-dim": "#efc900",
+                        "on-error-container": "#65000b",
+                        "surface-dim": "#f7d0df",
+                        "surface-variant": "#fed9e7",
+                        "on-secondary-container": "#8619a2",
+                        "tertiary-fixed": "#ffd709",
+                        "on-background": "#432c36",
+                        "outline-variant": "#cba9b6",
+                        "on-tertiary-fixed-variant": "#665500",
+                        "on-error": "#fff7f6",
+                        "surface-container-highest": "#fed9e7",
+                        "on-secondary-fixed": "#6d0087",
+                        "primary-fixed": "#ffa9b9",
+                        "surface-container-high": "#ffe0eb",
+                        "on-secondary": "#fff7fb",
+                        "on-tertiary": "#fff8ec",
+                        "primary": "#bd0050",
+                        "tertiary-container": "#ffd709",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#5b4b00",
+                        "primary-container": "#ffa9b9",
+                        "surface-container-low": "#fff0f4",
+                        "primary-fixed-dim": "#ff93aa",
+                        "on-surface-variant": "#735763",
+                        "outline": "#90737f",
+                        "secondary-container": "#fdd6ff",
+                        "surface-container": "#ffe8f0",
+                        "inverse-surface": "#160b10",
+                        "secondary-fixed-dim": "#f8c3ff",
+                        "secondary-dim": "#871ba4",
+                        "surface-tint": "#bd0050",
+                        "inverse-primary": "#ff4d81",
+                        "error-dim": "#70030f",
+                        "surface-bright": "#fff8f8",
+                        "on-primary": "#fff7f7",
+                        "error": "#ac3434",
+                        "tertiary-dim": "#635200",
+                        "secondary-fixed": "#fdd6ff",
+                        "tertiary": "#705e00",
+                        "primary-dim": "#a70046",
+                        "secondary": "#952cb1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Be Vietnam Pro"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex">
+<!-- SideNavBar -->
+<aside class="hidden md:flex h-screen w-72 rounded-r-3xl sticky left-0 top-0 bg-white/60 dark:bg-slate-900/60 backdrop-blur-2xl flex-col py-8 space-y-2 z-50 shadow-2xl shadow-pink-500/5">
+<div class="px-8 mb-8">
+<span class="text-2xl font-black bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">LoveMatch</span>
+<div class="mt-6 flex items-center gap-3">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a male admin wearing a sleek dark blazer, soft cinematic lighting, minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDknUVbyVuUBKF4O-JtYDBBngagiTtfzR2jUmQC93d0dor9pfHvfihfrZKS4aVCkOeAS5IREbD8R0h9lh0-lsCcb00TMl1t9nV7Tm5mQlfS5Pg635WAve-OufT9DxqbX2NkOlWCSfH9UFye-jjDC9W-BfG8fP7n0onAuVW9fA1OxJIoMRBqwBAj9u8S-YLvmqfRQTVaiityJFxh743Mdf75BMguGgV0JXP9ElIahnlNm_e3KHea3MbGBpuneIBI4BaTiwdScBhx3b0"/>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface">Admin User</p>
+<p class="text-xs text-on-surface-variant font-medium">ยินดีต้อนรับ</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="text-slate-500 dark:text-slate-400 mx-4 px-6 py-3 hover:text-pink-500 hover:bg-rose-50 dark:hover:bg-rose-900/20 rounded-full transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium">แดชบอร์ด</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 mx-4 px-6 py-3 hover:text-pink-500 hover:bg-rose-50 dark:hover:bg-rose-900/20 rounded-full transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="person_search">person_search</span>
+<span class="font-medium">ค้นหาคู่</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 mx-4 px-6 py-3 hover:text-pink-500 hover:bg-rose-50 dark:hover:bg-rose-900/20 rounded-full transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-medium">แมทช์</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 mx-4 px-6 py-3 hover:text-pink-500 hover:bg-rose-50 dark:hover:bg-rose-900/20 rounded-full transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-medium">ข้อความ</span>
+</a>
+<a class="bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full mx-4 px-6 py-3 shadow-lg shadow-pink-200 flex items-center gap-3 active:translate-x-1 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="font-medium">Admin</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 mx-4 px-6 py-3 hover:text-pink-500 hover:bg-rose-50 dark:hover:bg-rose-900/20 rounded-full transition-all flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium">ตั้งค่า</span>
+</a>
+</nav>
+<div class="px-8 mt-auto pt-8">
+<button class="w-full bg-rose-50 text-primary px-4 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-rose-100 transition-colors">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                ออกจากระบบ
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 min-h-screen px-4 md:px-10 py-8 max-w-7xl">
+<header class="mb-10">
+<h1 class="text-4xl font-extrabold text-on-surface tracking-tight mb-2">จัดการสมาชิก</h1>
+<p class="text-on-surface-variant font-medium">ดูแลความเรียบร้อยและตรวจสอบสมาชิกของชุมชน LoveMatch</p>
+</header>
+<div class="grid grid-cols-12 gap-8">
+<!-- Left Column: Search, Filter & Table -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<!-- Search & Filter Glass Panel -->
+<section class="glass-panel p-6 rounded-lg shadow-sm border border-outline-variant/15 flex flex-col md:flex-row gap-4 items-end">
+<div class="flex-1 w-full">
+<label class="block text-sm font-semibold mb-2 text-on-surface-variant">ค้นหา</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-full border-none bg-surface-container-low focus:ring-2 focus:ring-primary/20 transition-all" placeholder="ชื่อ หรือ อีเมลสมาชิก..." type="text"/>
+</div>
+</div>
+<div class="w-full md:w-48">
+<label class="block text-sm font-semibold mb-2 text-on-surface-variant">สถานะ</label>
+<select class="w-full py-3 rounded-full border-none bg-surface-container-low focus:ring-2 focus:ring-primary/20 transition-all appearance-none">
+<option>ทั้งหมด</option>
+<option>ปกติ</option>
+<option>ระงับการใช้งาน</option>
+<option>รอตรวจสอบ</option>
+</select>
+</div>
+<div class="w-full md:w-48">
+<label class="block text-sm font-semibold mb-2 text-on-surface-variant">แพ็กเกจ</label>
+<select class="w-full py-3 rounded-full border-none bg-surface-container-low focus:ring-2 focus:ring-primary/20 transition-all appearance-none">
+<option>ทั้งหมด</option>
+<option>Free</option>
+<option>Premium</option>
+<option>Elite</option>
+</select>
+</div>
+</section>
+<!-- Member Table -->
+<section class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-on-surface-variant font-bold text-xs tracking-wider uppercase">
+<tr>
+<th class="px-6 py-4">สมาชิก</th>
+<th class="px-6 py-4">วันที่สมัคร</th>
+<th class="px-6 py-4">แพ็กเกจ</th>
+<th class="px-6 py-4">การยืนยัน</th>
+<th class="px-6 py-4">จัดการ</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-rose-100 flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait of a smiling young woman with warm skin tone and long dark hair, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDzRs_Pkfz9yY12nS1NFFccmEO21zQ8Lb31nXEocOawEgdfWwHqiOoy-E_qBM-sxOr_gKVQ8h27PWEIC9yaBSDvIWq3ezgJtvfRkLT266zsIL0RqzRw4RGcy-uGg3d5TzWijBWYRHLgehkX59_7LG7weGFA-DAOAM3QKC8m37xSPSN_cl-Oz1WNrTNNgQjUZxJqtAPP2BLN0rpCuX9y-jh0ZrIPCX9v_8_fTDaJR1rlbK0nbpjzRdSz-r2Qv_Drz4eZXJ1UVVDrX8"/>
+</div>
+<div>
+<p class="font-bold text-on-surface leading-tight">นันท์นภัส ใจดี</p>
+<p class="text-xs text-on-surface-variant">nanth.j@email.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-sm">12 พ.ค. 2024</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-[10px] font-bold uppercase tracking-widest">Premium</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1 text-secondary font-medium text-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                            ยืนยันแล้ว
+                                        </div>
+</td>
+<td class="px-6 py-5">
+<div class="flex gap-2">
+<button class="p-2 hover:bg-rose-50 text-on-surface-variant hover:text-primary transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-rose-50 text-on-surface-variant hover:text-error transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="block">block</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-rose-100 flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Headshot of a confident young man with short stylish hair, outdoors with blurred greenery background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIP6hbFPQT0eluoHBfMS-I-QwNz_Nqt1KWC1ZZk-KO3Omg1E4LQ1Jqt1lBDKoXFbIN5ADfu2YLGfZaZqdk6hytX6oKlKolQj7upe25NLCek0dVRKbN9mur1ocsZ453tlZ9imlJ_9jzGGQD7LMJBP-h6I2X-0SBkhubZTMkkeHXx7X4hT5E3T_hWSqYQqJnqZeeVWjsjzNaV3_6gA_JIuBGn_oM_NJC5-Xb-SEcSiQ9bQxKM9zjtu3wB02G4dRav5EP70Zy_xQrUXU"/>
+</div>
+<div>
+<p class="font-bold text-on-surface leading-tight">ธนาวุฒิ สมบัติ</p>
+<p class="text-xs text-on-surface-variant">tanawut.s@email.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-sm">15 พ.ค. 2024</td>
+<td class="px-6 py-5">
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full text-[10px] font-bold uppercase tracking-widest">Free</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1 text-on-surface-variant/40 font-medium text-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="pending">pending</span>
+                                            ยังไม่ยืนยัน
+                                        </div>
+</td>
+<td class="px-6 py-5">
+<div class="flex gap-2">
+<button class="p-2 hover:bg-rose-50 text-on-surface-variant hover:text-primary transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-rose-50 text-on-surface-variant hover:text-error transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="block">block</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors bg-error-container/5">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-rose-100 flex-shrink-0 opacity-50 grayscale">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young woman looking thoughtful, studio lighting with soft shadows on face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyzrPqi-BCScEYZzEo6akUJ9n31GaBL1oJIHk3HTVert7ZjgCFCv06zmbNARc3cLTwDfmSKEoJVfVrs0DxGCRhqVZ3UbHaY5D4-I2p6AMK-_Oh5_gzmdDxrIDNa3lVP7ie1RzBMuM9pFyvU1sPVdkN2y1o-zLFVE8BReEI6oeFDNW8WHnFqimHJeAwI3Tr9PupIFDQtQJPNXdv_iyHDWjKPrJv5eG1fMjx4F5GcsQx6BQKm6D0hZj5sKtoNFo-EMB97MhI82GAgEY"/>
+</div>
+<div>
+<p class="font-bold text-on-surface leading-tight opacity-50">วิภาดา รักดี</p>
+<p class="text-xs text-on-surface-variant opacity-50">vipada.r@email.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5 text-sm opacity-50">10 พ.ค. 2024</td>
+<td class="px-6 py-5 opacity-50">
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full text-[10px] font-bold uppercase tracking-widest">Free</span>
+</td>
+<td class="px-6 py-5">
+<div class="flex items-center gap-1 text-error font-bold text-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="report">report</span>
+                                            ถูกระงับ
+                                        </div>
+</td>
+<td class="px-6 py-5">
+<div class="flex gap-2">
+<button class="p-2 bg-primary text-white hover:bg-primary-dim transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="undo">undo</span>
+</button>
+<button class="p-2 hover:bg-rose-50 text-error transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 bg-surface-container-low flex justify-between items-center">
+<span class="text-sm text-on-surface-variant">แสดง 1-3 จากทั้งหมด 1,240 สมาชิก</span>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-white transition-colors text-outline">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center bg-primary text-white font-bold text-sm">1</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-white transition-colors text-on-surface-variant text-sm font-medium">2</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-white transition-colors text-on-surface-variant text-sm font-medium">3</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center hover:bg-white transition-colors text-outline">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Verification Queue -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<section class="glass-panel p-6 rounded-lg shadow-sm border border-outline-variant/15">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-xl font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="task_alt">task_alt</span>
+                            คิวยืนยันตัวตน
+                        </h2>
+<span class="bg-secondary/10 text-secondary text-xs font-black px-2 py-1 rounded-md">8 รอตรวจ</span>
+</div>
+<div class="space-y-6">
+<!-- Queue Item 1 -->
+<div class="bg-white/40 p-4 rounded-xl space-y-4 border border-outline-variant/10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young man with a slight beard, urban lifestyle look, soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdDDEBcLwOlVRc_jY6cg9hMcZ-W9eG8huraljfYOn-Icnnu6MKMmQNkkuG88fB2012tNQGsxZtnO_BH8vNTLKJKYKPi2ZwS2WVEqqdd2AoKHX-AGiAWFe8bT65aaNwhTae7fw3BOHCAZgAhta0YB2oIUmzO5e9NXjxulzrtWrtCbDHIw0f6IGhfKqPT-Ek8LH8mG6qUeVBi-m5M6NNr2m_vlWUwg7dgEGbthxMt1rlBDYOG2RcEvRKKK7l9opnWLhuNjcbeZVz4W8"/>
+</div>
+<div class="flex-1">
+<p class="font-bold text-on-surface text-sm">กิตติพงษ์ ยอดเยี่ยม</p>
+<p class="text-xs text-on-surface-variant">ส่งเมื่อ 10 นาทีที่แล้ว</p>
+</div>
+</div>
+<div class="aspect-video rounded-lg overflow-hidden relative group">
+<img class="w-full h-full object-cover" data-alt="Person holding a national identification card up to their chest, high quality mobile photo for verification purposes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy02VCNgPmp92ry_Bz5YMbVxA8sO_f6xq5CGCtjPFkejFBHs16FctrcFM6_77Xnvez2cUWdqbajVfuikew79WnPf1anwHafU3O1AUK5stHoBrxHYjB2ffLgVeIQ7oDhNDtH6UejR3qDOlrEwTJ-S827C3XFgB_Ng1IPEVEtPVIzhLfStsIiH9113QjywHvkLTV1BUgmgwg3W7dx4JOGKkDW1Gupz_hO6sVGZKCDuLyJ3BovQWYN9Fx2PSbQqOJxrnEZsWI4FgATt4"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-white text-on-surface px-4 py-2 rounded-full text-xs font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="zoom_in">zoom_in</span> ดูภาพขยาย
+                                    </button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="py-2.5 rounded-full border border-outline-variant text-on-surface-variant text-sm font-bold hover:bg-rose-50 transition-colors">ปฏิเสธ</button>
+<button class="py-2.5 rounded-full bg-primary text-white text-sm font-bold hover:bg-primary-dim transition-colors shadow-lg shadow-pink-200">อนุมัติ</button>
+</div>
+</div>
+<!-- Queue Item 2 -->
+<div class="bg-white/40 p-4 rounded-xl space-y-4 border border-outline-variant/10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a stylish woman with sunglasses perched on head, vibrant urban aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjKHNhNVQFY1_Oo-CI4prDQCY37xTmtqr-P5o-qb_wKtunpKj080geh5Hm4DtyWcgDA23r2YCnaidT79DF1eY8OQBE9U1NAqxXNXZDJVHFoDi87TZbs5aroD0NfM5982a3CMbpUryWj0mh1v374vco2I-Sq2Zw_w9pG-EMf9J3RpySEcJuC3sibVtkRI4H6alC9evIzJ5ubA99nlzrZY4ldRi7tMyGO-srVc4HpjGRnxXlJ0KMe3nPehQ5pCa0clbyWaKYCQxQHl0"/>
+</div>
+<div class="flex-1">
+<p class="font-bold text-on-surface text-sm">มุกดา รัตนเกียรติ</p>
+<p class="text-xs text-on-surface-variant">ส่งเมื่อ 45 นาทีที่แล้ว</p>
+</div>
+</div>
+<div class="aspect-video rounded-lg overflow-hidden relative group">
+<img class="w-full h-full object-cover" data-alt="Verification photo showing a person holding a Thai ID card next to their face, clear lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1NRxQNGb2mgjZH2uf7iEbcE1uxBR2GYpqQ5LvYXM1aL7jZJ58FZzBvsWseS9gp8uyneg_MAJZjheDi3F4k4ke3ZNYl_P43XePUT1iIolKPsO0hduiTmNU_TFpDMzTVX84atwskFVKbxRdpp_8O7YUvQUFKaeY9c4MPg3QvyQWr4t7gx45K0ouhzbe2ljHQFzSny9uI1XFXtvEakeiIV9cTL-3iceazdwd3d1V2Z3u77AXTJvjZYJmz6y67FXXOISuf0GXrVsyzGw"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-white text-on-surface px-4 py-2 rounded-full text-xs font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="zoom_in">zoom_in</span> ดูภาพขยาย
+                                    </button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="py-2.5 rounded-full border border-outline-variant text-on-surface-variant text-sm font-bold hover:bg-rose-50 transition-colors">ปฏิเสธ</button>
+<button class="py-2.5 rounded-full bg-primary text-white text-sm font-bold hover:bg-primary-dim transition-colors shadow-lg shadow-pink-200">อนุมัติ</button>
+</div>
+</div>
+<button class="w-full py-3 text-primary text-sm font-bold hover:underline">ดูคิวทั้งหมด</button>
+</div>
+</section>
+<!-- Statistics Section (Implicitly added for high-end UI feel) -->
+<section class="p-6 rounded-lg bg-gradient-to-br from-pink-500 to-purple-700 text-white shadow-xl shadow-pink-500/10">
+<p class="text-sm opacity-80 mb-1">ภาพรวมสมาชิกวันนี้</p>
+<div class="text-4xl font-black mb-4">+124 <span class="text-sm font-normal">คน</span></div>
+<div class="flex items-center gap-2 text-xs font-bold bg-white/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+                        เพิ่มขึ้น 12% จากเมื่อวาน
+                    </div>
+</section>
+</div>
+</div>
+<!-- Footer -->
+<footer class="mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center text-on-surface-variant text-xs gap-4">
+<div class="flex items-center gap-6">
+<span class="font-bold text-pink-600">LoveMatch</span>
+<span class="opacity-60">© 2024 LoveMatch. All rights reserved.</span>
+</div>
+<div class="flex gap-6 font-medium">
+<a class="hover:text-pink-600 transition-colors" href="#">เกี่ยวกับเรา</a>
+<a class="hover:text-pink-600 transition-colors" href="#">นโยบายความเป็นส่วนตัว</a>
+<a class="hover:text-pink-600 transition-colors" href="#">ข้อตกลงการใช้งาน</a>
+<a class="hover:text-pink-600 transition-colors" href="#">FAQ</a>
+</div>
+</footer>
+</main>
+<!-- FAB for Quick Actions (Mobile/Focused Task) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full shadow-2xl text-white flex items-center justify-center hover:scale-105 active:scale-95 transition-transform md:hidden">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</body></html>
