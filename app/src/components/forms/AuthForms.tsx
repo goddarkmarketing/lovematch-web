@@ -1,6 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, useWatch } from 'react-hook-form';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { z } from 'zod';
 import { useLoveMatch } from '../../context/LoveMatchContext';
@@ -43,6 +43,7 @@ export function AuthForms() {
     resolver: zodResolver(registerSchema),
     defaultValues: { name: '', email: '', password: '', confirmPassword: '' },
   });
+  const selectedRole = useWatch({ control: loginForm.control, name: 'role' });
 
   const goToTab = (tab: 'login' | 'register') => setSearchParams(tab === 'register' ? { tab } : {});
 
@@ -77,7 +78,7 @@ export function AuthForms() {
         <form className="lm-form" onSubmit={submitLogin}>
           <label>
             อีเมลหรือไอดี
-            <input placeholder={loginForm.watch('role') === 'admin' ? 'admin' : 'example@mail.com'} {...loginForm.register('email')} />
+            <input placeholder={selectedRole === 'admin' ? 'admin' : 'example@mail.com'} {...loginForm.register('email')} />
             <span>{loginForm.formState.errors.email?.message}</span>
           </label>
           <label>
