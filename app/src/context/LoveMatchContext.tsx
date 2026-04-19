@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, type PropsWithChildren, useContext, useState } from 'react';
+import { createContext, type PropsWithChildren, useContext, useEffect, useState } from 'react';
 import { initialState } from '../data/mockData';
 import type { AdminMember, AppState, GiftItem, PlanTier, Role, TransactionStatus } from '../types/domain';
 
@@ -41,9 +41,43 @@ interface LoveMatchContextValue {
 
 const LoveMatchContext = createContext<LoveMatchContextValue | null>(null);
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+const STORAGE_KEY = 'lovematch-app-state';
+
+function loadInitialState(): AppState {
+  if (typeof window === 'undefined') return initialState;
+
+  try {
+    const raw = window.localStorage.getItem(STORAGE_KEY);
+    if (!raw) return initialState;
+
+    const parsed = JSON.parse(raw) as Partial<AppState>;
+    return {
+      ...initialState,
+      ...parsed,
+      currentUser: parsed.currentUser ?? initialState.currentUser,
+      stats: parsed.stats ?? initialState.stats,
+      profiles: parsed.profiles ?? initialState.profiles,
+      likedProfileIds: parsed.likedProfileIds ?? initialState.likedProfileIds,
+      passedProfileIds: parsed.passedProfileIds ?? initialState.passedProfileIds,
+      selectedConversationId: parsed.selectedConversationId ?? initialState.selectedConversationId,
+      conversations: parsed.conversations ?? initialState.conversations,
+      walletEntries: parsed.walletEntries ?? initialState.walletEntries,
+      gifts: parsed.gifts ?? initialState.gifts,
+      members: parsed.members ?? initialState.members,
+      transactions: parsed.transactions ?? initialState.transactions,
+      pendingVerifications: parsed.pendingVerifications ?? initialState.pendingVerifications,
+    };
+  } catch {
+    return initialState;
+  }
+}
 
 export function LoveMatchProvider({ children }: PropsWithChildren) {
-  const [state, setState] = useState<AppState>(initialState);
+  const [state, setState] = useState<AppState>(loadInitialState);
+
+  useEffect(() => {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }, [state]);
 
   const value: LoveMatchContextValue = {
     state,

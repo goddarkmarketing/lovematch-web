@@ -8,6 +8,7 @@ import { AdminTransactionsPage } from '../pages/admin/AdminTransactionsPage';
 import { AuthPage } from '../pages/auth/AuthPage';
 import { LandingPage } from '../pages/public/LandingPage';
 import { PricingPage } from '../pages/public/PricingPage';
+import { ServicesPage } from '../pages/public/ServicesPage';
 import { ChatPage } from '../pages/user/ChatPage';
 import { DiscoverPage } from '../pages/user/DiscoverPage';
 import { SettingsPage } from '../pages/user/SettingsPage';
@@ -29,6 +30,7 @@ export function AppRouter() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/auth" element={<AuthPage />} />
       <Route path="/pricing" element={<PricingPage />} />
+      <Route path="/services" element={<ServicesPage />} />
       <Route path="/app/dashboard" element={<RequireRole allowed={['user']}><UserDashboardPage /></RequireRole>} />
       <Route path="/app/discover" element={<RequireRole allowed={['user']}><DiscoverPage /></RequireRole>} />
       <Route path="/app/chat" element={<RequireRole allowed={['user']}><ChatPage /></RequireRole>} />

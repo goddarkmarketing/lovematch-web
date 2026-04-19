@@ -1,10 +1,12 @@
 import { Heart, Mail, Sparkles, Wallet } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { AppSidebar } from '../../components/layout/AppSidebar';
 import { activityFeed, profilePool } from '../../data/mockData';
 import { useLoveMatch } from '../../context/LoveMatchContext';
 
 export function UserDashboardPage() {
   const { state } = useLoveMatch();
+
   return (
     <div className="app-shell">
       <AppSidebar mode="user" />
@@ -12,7 +14,7 @@ export function UserDashboardPage() {
         <section className="hero-banner">
           <p className="chip">ยินดีต้อนรับกลับมา</p>
           <p className="chip chip--gold">ยืนยันตัวตนแล้ว</p>
-          <h1>สวัสดีคุณ {state.currentUser?.name ?? 'เมริซา'}, พร้อมหาแมทช์วันนี้หรือยัง?</h1>
+          <h1>สวัสดีคุณ {state.currentUser?.name ?? 'เมริซา'}, พร้อมหาแมตช์วันนี้หรือยัง?</h1>
         </section>
 
         <section className="stats-grid">
@@ -24,7 +26,7 @@ export function UserDashboardPage() {
           <article className="stat-card">
             <Sparkles />
             <strong>{state.stats.newMatches}</strong>
-            <p>แมทช์ใหม่</p>
+            <p>แมตช์ใหม่</p>
           </article>
           <article className="stat-card">
             <Mail />
@@ -41,10 +43,18 @@ export function UserDashboardPage() {
         <section className="dashboard-layout">
           <div>
             <div className="quick-actions">
-              <button>ค้นหาคู่</button>
-              <button>แชท</button>
-              <button>เติมเครดิต</button>
-              <button>ส่งของขวัญ</button>
+              <Link to="/app/discover">
+                <button>ค้นหาคู่</button>
+              </Link>
+              <Link to="/app/chat">
+                <button>แชท</button>
+              </Link>
+              <Link to="/app/wallet">
+                <button>เติมเครดิต</button>
+              </Link>
+              <Link to="/app/chat">
+                <button>ส่งของขวัญ</button>
+              </Link>
             </div>
 
             <div className="section-heading">
@@ -64,7 +74,9 @@ export function UserDashboardPage() {
                         {profile.city} • {profile.interests[0]}
                       </p>
                     </div>
-                    <button className="chip-action">ดูโปรไฟล์</button>
+                    <Link className="chip-action" to="/app/discover">
+                      ดูโปรไฟล์
+                    </Link>
                   </div>
                 </article>
               ))}
@@ -88,8 +100,10 @@ export function UserDashboardPage() {
             </div>
             <div className="panel panel--gradient">
               <h3>อัปเกรดเป็น VIP</h3>
-              <p>ดูว่าใครกดถูกใจคุณ ย้อนกลับการปัด และส่งข้อความหากันได้ทันทีโดยไม่ต้องรอแมทช์</p>
-              <button className="mini-cta">เริ่มเลยเพียง 199.-</button>
+              <p>ดูว่าใครกดถูกใจคุณ ย้อนกลับการปัด และส่งข้อความหากันได้ทันทีโดยไม่ต้องรอแมตช์</p>
+              <Link className="mini-cta" to="/pricing">
+                เริ่มเลยเพียง 199.-
+              </Link>
             </div>
           </aside>
         </section>

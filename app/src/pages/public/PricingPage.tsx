@@ -1,4 +1,5 @@
 import { CheckCircle2, ShieldCheck } from 'lucide-react';
+import { PublicFooter } from '../../components/layout/PublicFooter';
 import { PublicHeader } from '../../components/layout/PublicHeader';
 import { Button } from '../../components/shared/Button';
 import { useLoveMatch } from '../../context/LoveMatchContext';
@@ -56,6 +57,7 @@ export function PricingPage() {
           <p>ทีมงานสามารถต่อยอดหน้า pricing นี้เป็น paywall จริงและเชื่อม webhook หลังบ้านได้ทันที</p>
         </div>
       </section>
+      <PublicFooter />
     </main>
   );
 }

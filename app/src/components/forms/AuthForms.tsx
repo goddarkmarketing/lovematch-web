@@ -30,6 +30,7 @@ type RegisterValues = z.infer<typeof registerSchema>;
 export function AuthForms() {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeTab = searchParams.get('tab') === 'register' ? 'register' : 'login';
+  const redirectPath = searchParams.get('redirect');
   const { login, register } = useLoveMatch();
   const navigate = useNavigate();
   const [loginError, setLoginError] = useState('');
@@ -43,15 +44,22 @@ export function AuthForms() {
     resolver: zodResolver(registerSchema),
     defaultValues: { name: '', email: '', password: '', confirmPassword: '' },
   });
+
   const selectedRole = useWatch({ control: loginForm.control, name: 'role' });
 
-  const goToTab = (tab: 'login' | 'register') => setSearchParams(tab === 'register' ? { tab } : {});
+  const goToTab = (tab: 'login' | 'register') => {
+    const nextParams = new URLSearchParams();
+    if (tab === 'register') nextParams.set('tab', 'register');
+    if (redirectPath) nextParams.set('redirect', redirectPath);
+    setSearchParams(nextParams);
+  };
 
   const submitLogin = loginForm.handleSubmit(async (values) => {
     setLoginError('');
+
     try {
       await login(values);
-      navigate(values.role === 'admin' ? '/admin/overview' : '/app/dashboard');
+      navigate(redirectPath || (values.role === 'admin' ? '/admin/overview' : '/app/dashboard'));
     } catch {
       setLoginError(values.role === 'admin' ? 'แอดมินต้องใช้ id: admin และรหัสผ่าน: 1234' : 'ไม่สามารถเข้าสู่ระบบได้');
     }
@@ -59,7 +67,7 @@ export function AuthForms() {
 
   const submitRegister = registerForm.handleSubmit(async (values) => {
     await register(values);
-    navigate('/app/dashboard');
+    navigate(redirectPath || '/app/dashboard');
   });
 
   return (
